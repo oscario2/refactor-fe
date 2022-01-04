@@ -1,5 +1,8 @@
 import type { DOMAttributes } from 'react';
 
+// types
+import { IActionProps } from 'src/types/types.hooks';
+
 ///////////////
 // TYPES
 ///////////////
@@ -16,7 +19,9 @@ export type TCardState = typeof cardState[number];
  * props to parse into component
  * @component `<Component name={}>` or `<Component {...props}>`
  */
-export interface ICreditCardProps extends DOMAttributes<HTMLElement> {
+export interface ICreditCardProps
+  extends DOMAttributes<HTMLElement>,
+    IActionProps {
   /**
    * card holder name
    */

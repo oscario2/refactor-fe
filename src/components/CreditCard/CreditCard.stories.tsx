@@ -1,11 +1,16 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ICreditCardProps } from '.';
+
+// addons
+import { withPerformance } from 'storybook-addon-performance';
 
 // components
 import { CreditCard } from './CreditCard';
 
 // utils
 import { creditCardState } from './CreditCard.utils';
+
+// types
+import type { ICreditCardProps } from './CreditCard.types';
 
 ///////////////
 // HELPERS
@@ -31,6 +36,7 @@ const setState = (props: Partial<TProps>): TProps => {
 export default {
   title: `Components/${Component.name}`,
   component: Component,
+  decorators: [withPerformance],
 } as ComponentMeta<TComponent>;
 
 // extract types for `args` autocompletion
