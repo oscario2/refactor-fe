@@ -5,11 +5,12 @@ module.exports = {
   globals: {
     'ts-jest': {
       isolatedModules: true,
+      allowJs: true,
     },
   },
   transform: {
     '^.+\\.(ts|tsx)$': 'ts-jest',
-    '^.+\\.(js|jsx)$': 'babel-jest',
+    '^.+\\.(js|jsx)$': '',
   },
   transformIgnorePatterns: ['node_modules', 'lib'],
   modulePaths: ['<rootDir>'], // baseUrl in tsconfig.json

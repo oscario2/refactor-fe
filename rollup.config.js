@@ -42,12 +42,12 @@ export default [
       peerDepsExternal(),
       resolve(),
       commonjs(),
-      typescript({ tsconfig: './tsconfig.json' }),
+      typescript({ tsconfig: './tsconfig.rollup.json' }),
       terser(),
     ],
   },
   {
-    input: `${outDir}/esm/types/index.d.ts`,
+    input: `${outDir}/esm/types/src/index.d.ts`,
     output: [
       { file: `${outDir}/cjs/index.d.ts`, format: 'cjs' },
       { file: `${outDir}/esm/index.d.ts`, format: 'esm' },

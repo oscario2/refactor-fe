@@ -44,7 +44,7 @@ export interface ICreditCardProps
 
   /**
    * theme of card
-   * TODO: find a way to use `theme` with proper type and not `any` @oscario2
+   * - TODO: find a way to use `theme` with proper type and not `any` @oscario2
    */
   state: TCardState;
 }

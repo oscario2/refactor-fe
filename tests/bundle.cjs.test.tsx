@@ -4,13 +4,14 @@ import { CreditCard } from '../lib/cjs';
 describe('CreditCard', () => {
   it('renders the componet', async () => {
     // arrange
-    const state = {
-      name: 'John Doe',
-      cardNumber: 1234,
-      expiryDate: Date.now() + 3600,
+    const kek = {
+      name: 'Marty McFly',
+      cardNumber: '**** 1177',
+      expiryMonth: 8,
+      expiryYear: 2023,
     };
 
-    const { container } = render(<CreditCard {...state} />);
+    const { container } = render(<CreditCard {...kek} state="inactive" />);
     expect(container).not.toBeUndefined();
   });
 });
