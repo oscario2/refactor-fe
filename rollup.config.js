@@ -15,7 +15,7 @@ const debug = process.env.DEBUG || true;
 
 // configs
 const packageJson = require('./package.json');
-const tsConfig = require('./tsconfig.json');
+const tsConfig = require('./tsconfig.rollup.json');
 
 // consts
 const { outDir } = tsConfig.compilerOptions;

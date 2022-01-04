@@ -17,8 +17,7 @@ A boilerplate with fine grained control to bundle libraries or apps in `cjs` or 
   - [`app.tsx`](src/app.tsx)
     - showcase each component from `components`
 - [`tests/`](tests)
-  - `bundle.cjs.test.jsx` tests the `cjs` bundle
-  - `bundle.esm.test.jsx` tests the `esm` bundle
+  - `bundle.cjs.test.tsx` tests the `cjs` bundle
 - [`scripts/`](scripts)
   - `run.script.js` ensures invariant execution across all platforms and versions
   - `storybook.script.js` runs an invaraint instance of `start-storybook`
