@@ -1,7 +1,7 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 // types
-import type { TCardState } from '../CreditCard.types';
+import { ECardState, TCardState } from '../CreditCard.types';
 
 ///////////////
 // COLORS
@@ -9,7 +9,7 @@ import type { TCardState } from '../CreditCard.types';
 
 type TColorProps = 'background' | 'inner' | 'outer' | 'border';
 
-const inactiveColor: Record<TColorProps, string> = {
+const idleColor: Record<TColorProps, string> = {
   background: '#f2f6ff',
   inner: '#f2f6ff',
   outer: '#f2f6ff',
@@ -42,27 +42,27 @@ const style = css`
 
 //
 const themes: Record<TCardState, FlattenSimpleInterpolation> = {
-  /** @theme `inactive` */
-  inactive: css`
+  /** @theme `idle` */
+  [ECardState.idle]: css`
     ${style}
 
     // variables
     --inner-size: 8px;
 
     // inner circle
-    background: ${inactiveColor.background};
+    background: ${idleColor.background};
     height: var(--inner-size);
     width: var(--inner-size);
 
     //
     box-shadow: 
       // outer circle
-      0 0 0 calc(var(--inner-size) - 2px) ${inactiveColor.outer},
+      0 0 0 calc(var(--inner-size) - 2px) ${idleColor.outer},
       // border
-      0 0 0 calc(var(--inner-size) - 1px) ${inactiveColor.border};
+      0 0 0 calc(var(--inner-size) - 1px) ${idleColor.border};
   `,
   /** @theme `active` */
-  active: css`
+  [ECardState.active]: css`
     ${style}
 
     // variables
@@ -81,7 +81,7 @@ const themes: Record<TCardState, FlattenSimpleInterpolation> = {
       0 0 0 calc(var(--inner-size) - 1px) ${activeColor.border};
   `,
   /** @theme `expired` */
-  expired: css`
+  [ECardState.expired]: css`
     ${style}
 
     // variables

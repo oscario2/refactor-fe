@@ -1,16 +1,16 @@
 import { css, FlattenSimpleInterpolation } from 'styled-components';
 
 // types
-import type { TCardState } from '../CreditCard.types';
+import { ECardState, TCardState } from '../CreditCard.types';
 
 ///////////////
 // COLORS
 ///////////////
 
 const color: Record<TCardState, string> = {
-  inactive: 'rgba(255, 255, 255, 0.1)',
-  active: '#21bf96',
-  expired: '#eb5757',
+  [ECardState.idle]: 'rgba(255, 255, 255, 0.1)',
+  [ECardState.active]: '#21bf96',
+  [ECardState.expired]: '#eb5757',
 };
 
 ///////////////
@@ -56,18 +56,18 @@ const style = css`
 
 //
 const themes: Record<TCardState, FlattenSimpleInterpolation> = {
-  /** @theme `inactive` */
-  inactive: css`
+  /** @theme `idle` */
+  [ECardState.idle]: css`
     ${style}
-    border: 2px solid ${color.inactive};
+    border: 2px solid ${color.idle};
   `,
   /** @theme `active` */
-  active: css`
+  [ECardState.active]: css`
     ${style}
     border: 2px solid ${color.active};
   `,
   /** @theme `expired` */
-  expired: css`
+  [ECardState.expired]: css`
     ${style}
     border: 2px solid ${color.expired};
   `,

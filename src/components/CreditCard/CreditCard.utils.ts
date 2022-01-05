@@ -6,5 +6,5 @@ export const creditCardState: ICreditCardProps = {
   cardNumber: '**** 1177',
   expiryMonth: 8,
   expiryYear: 2023,
-  state: 'inactive',
+  state: 'idle',
 };

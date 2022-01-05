@@ -11,7 +11,7 @@ describe('CreditCard', () => {
       expiryYear: 2023,
     };
 
-    const { container } = render(<CreditCard {...kek} state="inactive" />);
+    const { container } = render(<CreditCard {...kek} state="idle" />);
     expect(container).not.toBeUndefined();
   });
 });

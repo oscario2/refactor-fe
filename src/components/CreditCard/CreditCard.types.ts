@@ -1,15 +1,18 @@
 import type { DOMAttributes } from 'react';
 
-// types
-import { IActionProps } from 'src/types/types.hooks';
-
 ///////////////
 // TYPES
 ///////////////
 
-// favor `string` over `enum` to support typings for .jsx
-export const cardState = ['inactive', 'active', 'expired'] as const;
-export type TCardState = typeof cardState[number];
+// `enum` to support typings for .jsx
+export const ECardState = {
+  idle: 'idle',
+  active: 'active',
+  expired: 'expired',
+} as const;
+
+export type TCardState = keyof typeof ECardState;
+export type TCardValue = typeof ECardState[TCardState];
 
 ///////////////
 // INTERFACES
@@ -19,9 +22,7 @@ export type TCardState = typeof cardState[number];
  * props to parse into component
  * @component `<Component name={}>` or `<Component {...props}>`
  */
-export interface ICreditCardProps
-  extends DOMAttributes<HTMLElement>,
-    IActionProps {
+export interface ICreditCardProps extends DOMAttributes<HTMLElement> {
   /**
    * card holder name
    */

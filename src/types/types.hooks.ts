@@ -2,11 +2,11 @@
 // INTERFACES
 ///////////////
 
-export interface IActionProps {
+export interface IActionProps<T> {
   /**
    * callback for debugging, testing or to use in storybook
    */
-  onAction?: (event: TActionEvent) => void;
+  onAction?: (action: T) => void;
 }
 
 ///////////////

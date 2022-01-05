@@ -10,7 +10,7 @@ import { CreditCard } from './CreditCard';
 import { creditCardState } from './CreditCard.utils';
 
 // types
-import type { ICreditCardProps } from './CreditCard.types';
+import { ECardState, ICreditCardProps } from './CreditCard.types';
 
 ///////////////
 // HELPERS
@@ -47,32 +47,32 @@ const template: ComponentStory<TComponent> = (args) => <Component {...args} />;
 ///
 
 // figma: default - inactive
-export const CardInactive = template.bind({});
-CardInactive.args = setState({});
+export const CardIdle = template.bind({});
+CardIdle.args = setState({});
 
 // figma: default - active
 export const CardActive = template.bind({});
-CardActive.args = setState({ state: 'active' });
+CardActive.args = setState({ state: ECardState.active });
 
 // figma: default - expired
 export const CardExpired = template.bind({});
-CardExpired.args = setState({ state: 'expired' });
+CardExpired.args = setState({ state: ECardState.expired });
 
 ////
 // hover
 ///
 
 // figma: hover - inactive
-export const CardHoverInactive = template.bind({});
-CardHoverInactive.args = setState({});
+export const CardHoverIdle = template.bind({});
+CardHoverIdle.args = setState({});
 
 // figma: hover - active
 export const CardHoverActive = template.bind({});
-CardHoverActive.args = setState({ state: 'active' });
+CardHoverActive.args = setState({ state: ECardState.active });
 
 // figma: hover - expired
 export const CardHoverExpired = template.bind({});
-CardHoverExpired.args = setState({ state: 'expired' });
+CardHoverExpired.args = setState({ state: ECardState.expired });
 
 ////
 // pressed
@@ -84,8 +84,8 @@ CardPressedIdle.args = setState({});
 
 // figma: pressed - active
 export const CardPressedActive = template.bind({});
-CardPressedActive.args = setState({ state: 'active' });
+CardPressedActive.args = setState({ state: ECardState.active });
 
 // figma: pressed - expired
 export const CardPressedExpired = template.bind({});
-CardPressedExpired.args = setState({ state: 'expired' });
+CardPressedExpired.args = setState({ state: ECardState.expired });
