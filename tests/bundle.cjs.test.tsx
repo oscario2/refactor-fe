@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { CreditCard } from '../lib/cjs';
+import { CreditCard, ECardState } from '../lib/cjs';
 
 describe('CreditCard', () => {
   it('renders the componet', async () => {
@@ -11,7 +11,9 @@ describe('CreditCard', () => {
       expiryYear: 2023,
     };
 
-    const { container } = render(<CreditCard {...kek} state="idle" />);
+    const { container } = render(
+      <CreditCard {...kek} state={ECardState.idle} />,
+    );
     expect(container).not.toBeUndefined();
   });
 });
