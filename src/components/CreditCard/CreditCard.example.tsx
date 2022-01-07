@@ -5,7 +5,7 @@ import { useIsMount } from 'src/hooks/useIsMount';
 import { CreditCard } from './CreditCard';
 
 // types
-import type { IActionProps } from 'src/types/types.hooks';
+import type { IActionProps } from 'src/types/hook.types';
 import { ECardState, ICreditCardProps, TCardState } from './CreditCard.types';
 
 export const CreditCardExample = ({
@@ -33,8 +33,8 @@ export const CreditCardExample = ({
   }, [state]);
 
   // checks
-  if (state !== 'expired' && expiryDate < Date.now()) {
-    setState('expired');
+  if (state !== ECardState.expired && expiryDate < Date.now()) {
+    setState(ECardState.expired);
   }
 
   return <CreditCard onClick={onClick} {...props} />;

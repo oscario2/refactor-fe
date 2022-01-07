@@ -52,6 +52,11 @@ const style = css`
     font-family: monospace;
     color: #fff;
   }
+
+  :after {
+    content: '';
+    color: black;
+  }
 `;
 
 //

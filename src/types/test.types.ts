@@ -1,18 +1,31 @@
 import { CSSProperties, FlattenSimpleInterpolation } from 'styled-components';
 
 ///////////////
+// TYPES
+///////////////
+
+// extend with psuedo elements
+export type TPseudoProperty =
+  | ':after'
+  | ':before'
+  | ':active'
+  | ':hover'
+  | ':disabled';
+export type TCssProperty = keyof CSSProperties;
+
+///////////////
 // INTERFACES
 ///////////////
 
 export interface ITestSuite<T extends string> {
-  /** render type */
-  type: string;
-  /** class name to find */
+  /** name of suite */
+  name: string;
+  /** classname to find */
   find: string;
   /** styled component to verify from */
   styles: Record<T, FlattenSimpleInterpolation>;
-  /** styles to verify */
-  rules: (keyof CSSProperties)[];
+  /** styles to match */
+  match: TCssProperty[];
   /** exclude from test */
   exclude?: boolean;
   /** only run this test */

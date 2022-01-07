@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // themes
-import { cardStyles, expiryStyles, radioStyles } from './styles';
+import { cardStyles, expiryStyles, radioStyles } from './themes';
 
 // types
 import type { ICreditCardProps } from './CreditCard.types';
