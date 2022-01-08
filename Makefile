@@ -42,20 +42,17 @@ endef
 storybook:
 	$(call _RUN, node scripts/storybook.script.js)
 
-
 ##
 # tests
 ##
 test-components:
 	$(call _TEST,src/components)
 	
-
 ##
 # hooks
 ##
 prepare:
 	$(call _RUN, yarn husky install)
-
 
 ## 
 # docker
