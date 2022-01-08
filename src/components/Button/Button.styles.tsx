@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // styles
-import { fontSizeStyles, fontWeightStyles } from './themes';
+import { fontSizeStyles, fontWeightStyles, colorStyles } from './themes';
 
 // types
 import type { IButtonProps } from './Button.types';
@@ -15,6 +15,7 @@ import type { IButtonProps } from './Button.types';
 const Button = styled.button<IButtonProps>`
   ${({ fontSize }) => fontSizeStyles[fontSize]};
   ${({ fontWeight }) => fontWeightStyles[fontWeight]};
+  ${({ color }) => colorStyles[color]};
 `;
 
 export const Styled = {

@@ -19,7 +19,11 @@ type TComponent = typeof Component;
 
 // generalize state
 type TProps = IButtonProps;
-const state: TProps = { fontSize: 'small', fontWeight: 'normal' };
+const state: TProps = {
+  fontSize: 'small',
+  fontWeight: 'normal',
+  color: 'black',
+};
 
 // modify state
 const setState = (props: Partial<TProps>): TProps => {
@@ -44,3 +48,10 @@ ButtonSmallNormal.args = setState({ fontSize: 'small', fontWeight: 'normal' });
 
 export const ButtonMediumBold = template.bind({});
 ButtonMediumBold.args = setState({ fontSize: 'medium', fontWeight: 'bold' });
+
+export const ButtonLargeBoldWhite = template.bind({});
+ButtonLargeBoldWhite.args = setState({
+  fontSize: 'large',
+  fontWeight: 'bold',
+  color: 'white',
+});

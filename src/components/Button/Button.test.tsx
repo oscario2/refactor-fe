@@ -8,11 +8,14 @@ import { runStylesTests, ITestStyleSuite } from 'src/tests/styles.test';
 
 // stories
 import * as stories from './Button.stories';
+const { ButtonSmallNormal, ButtonMediumBold, ButtonLargeBoldWhite } =
+  composeStories(stories);
+
+// styled
 import { Styled } from './Button.styles';
-const { ButtonSmallNormal, ButtonMediumBold } = composeStories(stories);
 
 // themes
-import { fontSizeStyles, fontWeightStyles } from './themes';
+import { fontSizeStyles, fontWeightStyles, colorStyles } from './themes';
 
 const suite: ITestStyleSuite[] = [
   {
@@ -26,6 +29,12 @@ const suite: ITestStyleSuite[] = [
     story: <ButtonMediumBold />,
     styled: Styled.Button,
     themes: [fontSizeStyles.medium, fontWeightStyles.bold],
+  },
+  {
+    name: '`large` button with `bold` font-weight and `black` color theme',
+    story: <ButtonLargeBoldWhite />,
+    styled: Styled.Button,
+    themes: [fontSizeStyles.large, fontWeightStyles.bold, colorStyles.white],
     verbose: true,
   },
 ];
