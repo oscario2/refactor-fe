@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 // styles
-import { fontSizeStyles, fontWeightStyles, colorStyles } from './themes';
+import { fontSizeStyles, fontWeightStyles, colorStyles } from './styles';
 
 // types
 import type { IButtonProps } from './Button.types';

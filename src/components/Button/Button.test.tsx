@@ -15,7 +15,7 @@ const { ButtonSmallNormal, ButtonMediumBold, ButtonLargeBoldWhite } =
 import { Styled } from './Button.styles';
 
 // themes
-import { fontSizeStyles, fontWeightStyles, colorStyles } from './themes';
+import { fontSizeStyles, fontWeightStyles, colorStyles } from './styles';
 
 const suite: ITestStyleSuite[] = [
   {
