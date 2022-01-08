@@ -42,6 +42,9 @@ endef
 storybook:
 	$(call _RUN, node scripts/storybook.script.js)
 
+storybook-clean:
+	$(call _RUN, node -p \"fs.rmdirSync('node_modules/.cache/storybook', { recursive: true });\")
+
 ##
 # tests
 ##

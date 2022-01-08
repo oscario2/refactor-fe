@@ -37,7 +37,8 @@
     "storybook:script": "node scripts/storybook.script.js",
     "storybook:clean": "node -p \"fs.rmdirSync('node_modules/.cache/storybook', { recursive: true });\"",
     "prettier": "prettier --config .prettierrc --write \"**/*.{ts,tsx}\"",
-    "prettier:list-different": "prettier --config .prettierrc --list-different \"**/*.{ts,tsx}\""
+    "prettier:list-different": "prettier --config .prettierrc --list-different \"**/*.{ts,tsx}\"",
+    "prepare": "husky install"
   },
   "peerDependencies": {
     "react": "^17.0.2",
