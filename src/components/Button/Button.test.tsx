@@ -1,8 +1,3 @@
-/**
- * we want to test the `themes` to ensure our logic and what we provide matches what we rendered
- * as testing the `styled.div` directly will always yield true as we compare the rendered style
- */
-
 import { composeStories } from '@storybook/testing-react';
 import { runStylesTests, ITestStyleSuite } from 'src/tests/styles.test';
 

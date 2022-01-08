@@ -7,7 +7,7 @@ import { IButtonProps } from '../Button.types';
 /**
  * ## declaration
  * this is where all the `themes` are defined/declared
- * or as styled-components calls them `mixins`
+ * `mixins` as styled-components calls them
  */
 
 const base = css`
